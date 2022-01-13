@@ -1,5 +1,6 @@
 package gb.calendar;
 
+import java.time.Month;
 import java.util.Scanner;
 
 public class Calendar {
@@ -23,31 +24,32 @@ public class Calendar {
 	public static void main(String[] args) {
 
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
-		String PROMPT = "cal> ";
+
 		Scanner scanner = new Scanner(System.in);
 		Calendar cal = new Calendar();
-
+		String prompt = "> ";
 		cal.printSampleCalendar();
-		System.out.println();
-
+		System.out.println(); //칸띄우기용
+		
 		int month = 0;
-
-		while (true) {
-			System.out.println("월을 입력하세요. (종료하려면 -1)");
-			System.out.print(PROMPT);
-			month = scanner.nextInt();
-			if (month == -1) {
-				System.out.println("출력이 끝났습니다.");
-				break;
-			} else if (!(1 <= month && month <= 12)) {
-				System.out.println("1 ~ 12 사이 숫자를 입력하세요");
-				continue;
-			}
-			System.out.printf("%d월은 %d일까지 있습니다.%n%n", month, cal.getMaxDaysOfMonth(month));
-
-		}
-
-		scanner.close();
+        while(true) {
+        	System.out.println("달을 입력하세요.");
+        	System.out.print(prompt);
+        	month = scanner.nextInt();
+        	if(month == -1) {
+         		System.out.println("프로그램을 종료합니다.");
+         		break;
+        	} else if(!(1<=month&&month<12)) {
+        		System.out.println("1~12사이 숫자를 입력하세요");
+        		continue;
+        	}
+        	System.out.printf("%d월은 %d일까지 있습니다.%n%n", month, cal.getMaxDaysOfMonth(month));
+        	
+        }
+        
+        
+       
+        scanner.close();
 	}
 
 }
