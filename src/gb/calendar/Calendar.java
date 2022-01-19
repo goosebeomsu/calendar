@@ -1,7 +1,5 @@
 package gb.calendar;
 
-import java.util.Scanner;
-
 public class Calendar {
 
 	private static final int[] maxDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -28,20 +26,33 @@ public class Calendar {
 
 	}
 
-	public void printCalendar(int year, int month) {
+	public void printCalendar(int year, int month, int weekday) {
 		System.out.printf("   <<%4d년 %2d월>>%n", year, month);
 		System.out.println(" SU MO TU WE TH FR SA ");
 		System.out.println("---------------------");
+
+		// print blank
+		for (int i = 0; i < weekday; i++) {
+			System.out.print("   ");
+		}
 		
 		int maxDay = getMaxDaysOfMonth(year, month);
-
-		for (int i = 1; i <= maxDay; i++) {
+		int count = 7 - weekday;
+		
+		//print first line
+		for(int i = 1; i <= count; i++) {
 			System.out.printf("%3d", i);
-			if (i % 7 == 0) {
+		}
+		System.out.println();
+
+        //print from second line to last
+		for (int i = count + 1; i <= maxDay; i++) {
+			System.out.printf("%3d", i);
+			if (i % 7 == count) {
 				System.out.println();
 			}
 		}
-
+		System.out.println();
 	}
 
 }
