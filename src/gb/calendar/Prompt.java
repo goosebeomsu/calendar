@@ -31,7 +31,7 @@ public class Prompt {
 
 		int year = 2021;
 		int month = 1;
-		int weekday = 0;
+	
 		while (true) {
 			System.out.println("년도를 입력하세요.(exit: -1)");
 			System.out.print("YEAR> ");
@@ -50,12 +50,7 @@ public class Prompt {
 				continue;
 			}
 
-			System.out.println("첫번째 요일을 입력하세요. (SU, MO, TU, WE, TH, FR, SA)");
-			System.out.print("WEEKDAY> ");
-			String str_weekday = scanner.next();
-			weekday = parseDay(str_weekday);
-
-			cal.printCalendar(year, month, weekday);
+			cal.printCalendar(year, month);
 			System.out.println();
 
 		}
