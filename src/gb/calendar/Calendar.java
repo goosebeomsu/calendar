@@ -40,6 +40,7 @@ public class Calendar {
 		
 		int maxDay = getMaxDaysOfMonth(year, month);
 		int count = 7 - weekday;
+		int delim = (count < 7) ? count : 0;
 		
 		//print first line
 		for(int i = 1; i <= count; i++) {
@@ -50,7 +51,7 @@ public class Calendar {
         //print from second line to last
 		for (int i = count + 1; i <= maxDay; i++) {
 			System.out.printf("%3d", i);
-			if (i % 7 == count) {
+			if (i % 7 == delim) {
 				System.out.println();
 			}
 		}

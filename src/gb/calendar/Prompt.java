@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class Prompt {
 
 	public int parseDay(String weekday) {
-		if (weekday.equals("SU"))
+		if (weekday.equals("su"))
 			return 0;
-		else if (weekday.equals("MO"))
+		else if (weekday.equals("mo"))
 			return 1;
-		else if (weekday.equals("TU"))
+		else if (weekday.equals("tu"))
 			return 2;
-		else if (weekday.equals("WE"))
+		else if (weekday.equals("we"))
 			return 3;
-		else if (weekday.equals("TH"))
+		else if (weekday.equals("th"))
 			return 4;
-		else if (weekday.equals("FR"))
+		else if (weekday.equals("fr"))
 			return 5;
-		else if (weekday.equals("SA"))
+		else if (weekday.equals("sa"))
 			return 6;
 		else
 			return 0;
